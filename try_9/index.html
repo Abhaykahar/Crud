@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>  
+    <title>crud</title>
+</head>
+<body>
+    <h1 align="center" style="color: black;">Add user</h1>
+    <table align="center" cellspacing="0" cellpadding="5" border="1">
+        <input type="hidden" id="editid">
+        <tr>
+            <td>Name</td>
+            <td>
+                <input type="text" placeholder="name" id="name">
+            </td>
+        </tr>
+        <tr>
+            <td>phone</td>
+            <td>
+                <input type="number" placeholder="phone" id="phone">
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <input type="button" id="add" onclick="adduser()" value="submit">
+                <input type="button" id="edit" onclick="updateuser()" value="edit">
+            </td>
+        </tr>
+    </table>
+
+    <br><br><br><br><br>
+
+    <table align="center" border="1" cellspacing="0" cellpadding="5">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>phone</th>
+            <th>Action</th>
+        </tr>
+        <tbody id="record"></tbody>
+    </table>
+    
+</body>
+<script src="./index.js"></script>
+</html>

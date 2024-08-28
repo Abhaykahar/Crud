@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <title>form</title>
+    </head>
+    <body>
+        <h2 align="center">User Details</h2>
+        <table align="center" border="1" cellspacing="0" cellpadding="5">
+            <input type="text" id="editid" style="display: none;">
+            <tr>
+                <td>Name:-</td>
+                <td>
+                    <input type="text" id="name">
+                </td>
+            </tr>
+            <tr>
+                <td>Phone</td>
+                <td>
+                    <input type="text" id="Phone" >
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="button" value="submit" onclick="adduser()">
+                </td>
+            </tr>
+        </table><br><br><br>
+        <h2 align="center">User Details</h2>
+        <table align="center" border="1" cellspacing="0" cellpadding="5">
+            <tr>
+                <td align="center">User Id</td>
+                <td align="center">Name</td>
+                <td align="center">Phone</td>
+                <td align="center">Action</td>
+            </tr>
+            <tbody id="record" align="center"></tbody>
+        </table>
+        <script src="./crud.js"></script>
+    </body>
+</html>

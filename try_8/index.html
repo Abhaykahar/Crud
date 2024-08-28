@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Form</title>
+</head>
+<body>
+    <h1 align="center">user details</h1>
+        <input type="hidden" id="editid">
+        <table align="center" border="1" cellspacing="0" cellpadding="5">
+            <tr>
+                <td>
+                    Name
+                </td>
+                <td>
+                    <input type="text" id="name">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    phone
+                </td>
+                <td>
+                    <input type="text" id="phone">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                </td>
+                <td>
+                    <input type="button" onclick="adduser()" value="submit">
+                </td>
+            </tr>
+        </table>
+        <br><br><br><br>
+
+        <table align="center" border="1" cellspacing="0" cellpadding="5">
+            <tr>
+                <td>User id</td>
+                <td>name</td>
+                <td>Phone</td>
+                <td>Action</td>
+            </tr>
+            <tbody id="record"></tbody>
+        </table>
+
+        <script src="./index.js"></script>
+</body>
+</html>

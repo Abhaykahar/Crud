@@ -1,0 +1,138 @@
+<html>
+	<head>
+		<title>Form</title>
+	<head>
+	<body>
+	<h2 align="center">User Details</h2>
+		<table align="center" border="1" cellspacing="0" cellpadding="5">
+			<input type="text" id="editid" style="display: none;">
+			<tr>
+				<td>Name</td>
+				<td>
+					<input type="text" id="name">
+				</td>
+			</tr>
+			<tr>
+				<td>phone</td>
+				<td>
+					<input type="text" id="phone">
+				</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>
+					<input type="button" onclick="add()" value="submit">
+				</td>
+			</tr>
+		</table><br><br><br>
+		<h2 align="center">View user</h2>
+		<table align="center" border="1" cellspacing="0" cellpadding="5">
+		<tr>
+			<td>user Id</td>
+			<td>Name</td>
+			<td>Phone</td>
+			<td>Action</td>
+		</tr>
+		<tbody id="record"></tbody>
+</table>
+	</body>
+<html>
+
+<script type="text/javascript">
+let open=[
+	{
+		userid:123,
+		name:"krish",
+		phone:"836826",
+	},
+	{	
+		userid:536,
+		name:"jack",
+		phone:"908739",
+	},
+];
+
+function viewuser(){
+	let tbl="";
+	open.map((val)=>{
+	return (
+		tbl +=  
+		`
+			<tr>
+				<td>${val.userid}</td>
+				<td>${val.name}</td>
+				<td>${val.phone}</td>
+				<td>
+				<button onclick="deletedata(${val.userid})">Delete</button>
+				||
+				<button onclick="edituser(${val.userid})">Edit</button>
+				</td>
+			</tr>
+		`
+	)
+	})
+	document.getElementById('record').innerHTML=tbl;
+
+}
+viewuser();
+
+function add(){
+	let fname=document.getElementById('name').value;
+	let fphone=document.getElementById('phone').value;
+	let id = document.getElementById('editid').value;
+	
+	if(!fname|| !fphone){
+		alert("plese enter details...");
+}
+	
+	let obj = {
+		userid:Math.floor(Math.random()*1000),
+		name:fname,
+		phone:fphone,
+	}
+
+	if(id){
+    let ed = open.map((val)=>{
+        if(val.userid == id){
+            return {
+                ...val,
+                name:fname,
+                phone:fphone,
+            }
+        }
+        return val;
+    })
+    open=ed;
+    alert("successfully edit...");
+    viewuser();
+}
+else{
+    open.push(obj)
+    alert("user add sucessfully.....");
+    viewuser();    
+}
+
+	
+	document.getElementById('name').value="";
+	document.getElementById('phone').value="";
+}
+
+function deletedata(id){
+let d=open.filter((val)=>{
+	return val.userid != id
+})
+	open=d;
+	alert("delete sucessfully....");
+	viewuser();
+}
+
+function edituser(id){
+	let edit=open.filter((val)=>{
+		return val.userid === id;
+	})[0];
+	document.getElementById('name').value=	edit.name;
+	document.getElementById('phone').value=	edit.phone;
+	document.getElementById('editid').value=id;
+}
+
+</script>

@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <title>Form</title>
+        <body>
+            <h2 align="center">Form</h2>
+            <table align="center" border="5" cellspacing="0" cellpadding="15">
+                <tr>
+                    <td>Name</td>
+                    <td>
+                        <input type="text" id="name">
+                    </td>
+                </tr>
+                <tr>
+                    <td>phone</td>
+                    <td>
+                        <input type="text" id="phone">
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <input type="button" value="submit" onclick="adduser()">
+                    </td>
+                </tr>
+            </table><br><br><br>
+
+            <h2 align="center">Add user detail</h2>
+
+            <table align="center" border="5" cellspacing="0" cellpadding="15">
+                <tr>
+                    <td>User Id</td>
+                    <td>Name</td>
+                    <td>phone</td>
+                    <td>Action</td>
+                </tr>
+                <tbody id="record"></tbody>
+            </table>
+            <script src="./crud.js"></script>
+        </body>
+    </head>
+</html>
+
+<style>
+    table{
+        background-color: antiquewhite;
+    }
+    table button{
+        background-color: black;
+        color: white;
+    }
+</style>
